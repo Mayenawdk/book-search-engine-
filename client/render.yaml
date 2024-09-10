@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: book-search-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run start
+    envVars:
+      - key: MONGODB_URI
+        value: <Your MongoDB URI here>
+  - type: web
+    name: book-search-frontend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
